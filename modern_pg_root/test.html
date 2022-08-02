@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
+        <table id="table1" border=0 cellSpacing=10 cellPadding=5 width=800>
+            
+            
+         </table>
+        
+        <script>
+            Papa.parse("menu.csv", {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: function (results) {
+                    console.log(results)
+
+                    htmlData = ""
+                    for (let i = 0; i < results.data.length; ++i){
+                     if (results.data[i].Category == "Gourmet Delights"){
+                        
+                        if (i == 0){
+                           htmlData += "<TR bgColor=#008000><TD colSpan=2><DIV align=center><EM><STRONG>Gourmet Delights</STRONG></EM></DIV></TD></TR>"
+                        }
+                        
+                        var table1 = document.getElementById("table1");
+                        htmlData += '<tr><td><div align=left><STRONG>' + results.data[i].Name + '<BR></STRONG></DIV></TD><TD id="Combination Lo Mein" align=right>' + results.data[i].Price + '</TD></TR>'
+                        table1.innerHTML=htmlData;
+                        console.log(results.data[i].Name)
+
+
+                     }
+                    }
+                  //   document.getElementById("Combination Lo Mein").innerHTML = results.data[0].Price
+                }
+            })
+        </script>
+    </body>
+</html>

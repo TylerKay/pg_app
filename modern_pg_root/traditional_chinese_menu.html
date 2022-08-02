@@ -15,6 +15,7 @@
       <meta name="description" content="Panda Garden Ellensburg Washington" />
    </head>
    <body>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
       <nav>
          <div>
             <div>
@@ -52,94 +53,30 @@
          <br>
          <p><b>We Deliver (509) 925-2090</b></p>
          <font size="3" face="arial">
-         <DIV align=center><BR></DIV>
-         <DIV align=center>
-            <TABLE border=0 cellSpacing=10 cellPadding=5 width=800>
-               <TBODY>
-                  <TR bgColor=#008000>
-                     <TD colSpan=2>
-                  <TR>
-                     <TD>
-                        <DIV align=left><STRONG>Fish Hot Pot<BR></STRONG></DIV>
-                     </TD>
-                     <TD align=right>$15.95</TD>
-                  </TR>
-                  <TR>
-                     <TD>
-                        <DIV align=left><STRONG>Beef Hot Pot</STRONG></DIV>
-                     </TD>
-                     <TD align=right>$16.95</TD>
-                  </TR>
-                  <TR>
-                     <TD>
-                        <DIV align=left><STRONG>Seafood Combination with Black Bean Sauce</STRONG></DIV>
-                     </TD>
-                     <TD align=right>$16.95</TD>
-                  </TR>
-                  <TR>
-                     <TD>
-                        <DIV align=left><STRONG>Seafood Tofu in Szechuan Pot</STRONG></DIV>
-                     </TD>
-                     <TD align=right>$16.95</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <DIV align=left><STRONG>Hot Pepper Salt with Shrimp</STRONG></DIV>
-                     </TD>
-                     <TD align=right>$16.95</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <DIV align=left><STRONG>Shanghai Baby Bok Choy in Garlic Sauce</STRONG></DIV>
-                     </TD>
-                     <TD align=right>$13.95</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <DIV align=left><STRONG>Chinese Yams with Vegetables</STRONG></DIV>
-                     </TD>
-                     <TD align=right>$19.95</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <DIV align=left><STRONG>Eggplant with Szechuan Sauce</STRONG></DIV>
-                     </TD>
-                     <TD align=right>$15.95</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <DIV align=left><STRONG>Eggplant with Fish Sauce</STRONG></DIV>
-                     </TD>
-                     <TD align=right>$15.95</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <DIV align=left><STRONG>Mapo Tofu</STRONG></DIV>
-                     </TD>
-                     <TD align=right>$13.95</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <DIV align=left><STRONG>Happy Family Chinese Style</STRONG></DIV>
-                     </TD>
-                     <TD align=right>$15.95</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <DIV align=left><STRONG>Hot Pepper Salted with Chicken Wing</STRONG></DIV>
-                     </TD>
-                     <TD align=right>$15.95</td>
-                  </tr>
-                  <TR>
-                     <TD>
-                        <DIV align=left><STRONG>Roast Duck<BR></STRONG></DIV>
-                     </TD>
-                     <TD align=right>$10.95 (Appetizer) &nbsp; &nbsp; $18.95 (Half) &nbsp; &nbsp; $33.95 (Whole)</TD>
-                  </TR>
-                  </TD></TR>
-               </TBODY>
-            </TABLE>
+         <div align=center><br></div>
+         <div align=center>
+            <table id="Traditional_Chinese_Menu-section" border=0 cellSpacing=10 cellPadding=5 width=800></table>
       </header>
       </div>
+      <script>
+         Papa.parse("menu.csv", {
+             download: true,
+             header: true,
+             skipEmptyLines: true,
+             complete: function (results) {
+                  
+               sectionData = ""
+               for (let i = 0; i < results.data.length; ++i){
+                  if (results.data[i].Category == "Traditional_Chinese_Menu"){
+                     section = document.getElementById("Traditional_Chinese_Menu-section");
+                     sectionData += '<tr><td><div align=left><STRONG>' + results.data[i].Name + '<BR></STRONG></DIV></TD><TD align=right>' + results.data[i].Price + '</TD></TR>'
+                     section.innerHTML = sectionData;
+                  }
+               }
+                  
+               //   document.getElementById("Combination Lo Mein").innerHTML = results.data[0].Price
+             }
+         })
+     </script>
    </body>
 </html>

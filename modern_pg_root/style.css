@@ -134,22 +134,21 @@ nav ul li ul {
 	display: none;
 	position: absolute;
 	background-color: #fff;
-	padding: 10px;
+	padding: 2px;
 	border-radius: 0px 0px 4px 4px;
-	z-index: 2;
+	z-index: 1;
 }
 
 nav ul li:hover ul{
 	display: block;
-	
 }
 
 nav ul li ul li  {
 	width: 180px;
 	border-radius: 4px;
 }
-nav ul li ul li a {
-	padding:8px 14px
+nav ul li ul li a{
+	padding: 8px 14px;	
 }	
 
 nav ul li ul li a:hover {
