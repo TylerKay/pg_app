@@ -16,4 +16,4 @@ Run the driver.exe executable. An Output directory should be created where the w
 
 To configure the files, edit the config.ini file. This file is responsible for the input/output file names, name of the new directory created, and where the template word documents are located.
 
-#### Last updated: 8/4/2022
+#### Last updated: 8/9/2022
