@@ -25,6 +25,6 @@ To configure the files, edit the config.ini file. This file is responsible for t
 
 - To compile into .exe, install pyinstaller. Run the command pyinstaller --onefile driver.py
 
-#### Github Repository: https://github.com/TylerKay/Panda_Garden_Menu
+#### Github Repository: https://github.com/TylerKay/pg_app
 
 #### Last updated: 8/20/2022
