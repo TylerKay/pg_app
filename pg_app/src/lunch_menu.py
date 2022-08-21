@@ -38,6 +38,9 @@ class LunchMenu:
                         for i in priceList:
                             i = re.sub("\s+", "", i)
                             price += i + "  "
+                        
+                        # Adding space before $ sign
+                        price = price[:5] + ": " + price[5:17] + ": " + price[17:]
 
                 for table in document.tables:
                     for row in table.rows:

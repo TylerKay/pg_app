@@ -16,4 +16,6 @@ Run the driver.exe executable. An Output directory should be created where the w
 
 To configure the files, edit the config.ini file. This file is responsible for the input/output file names, name of the new directory created, and where the template word documents are located.
 
-#### Last updated: 8/10/2022
+#### Github Repository: https://github.com/TylerKay/Panda_Garden_Menu
+
+#### Last updated: 8/20/2022

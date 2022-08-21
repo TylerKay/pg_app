@@ -27,7 +27,10 @@ class DinnerCombination:
                             i = re.sub("\s+", "", i)
                             print("before i", i)
                             price += i + " "
-                
+
+                        # Adding space before $ sign
+                        price = price[:5] + ": " + price[5:16] + ": " + price[16:]
+
                 for table in document.tables:
                     for row in table.rows:
                         for cell in row.cells:
