@@ -14,7 +14,8 @@ Open up the menu.csv file and edit the prices of each item. Save the csv file.
   - Run the driver.exe executable. An Output directory should be created where the word documents were generated.
 - On Google Drive:
   - Click the driver.ipynb file. This will take you to a google colabatory workspace. Click the play button. An Output directory should be created where the word documents were generated.
-- Running through python. Run python3 driver.py. An Output directory should be created where the word documents were generated.
+- Running through Python.
+  - Run python3 driver.py. An Output directory should be created where the word documents were generated.
 
 ### Configuration:
 
