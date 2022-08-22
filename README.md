@@ -24,7 +24,8 @@ To configure the files, edit the config.ini file. This file is responsible for t
 #### Other Notes:
 
 - To compile into .exe, install pyinstaller. Run the command pyinstaller --onefile driver.py
+- .pub files WILL NOT be updated, only .docx files will. .pub files will have to be manually fixed (AKA the to-go and bubble tea menu).
 
 #### Github Repository: https://github.com/TylerKay/pg_app
 
-#### Last updated: 8/20/2022
+#### Last updated: 8/21/2022
